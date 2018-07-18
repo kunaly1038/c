@@ -29,8 +29,8 @@ void printArray(int array[],int x){
 
 void bubbleSort(int array[],int x){
 	int i,j,temp;
-	for(i=0;i<x;i++){
-		for(j=0;j<x;j++){
+	for(i=0;i<x-1;i++){
+		for(j=0;j<x-i-1;j++){
 			if(array[j]>array[i]){
 				temp = array[j];
 				array[j] =array[i];
