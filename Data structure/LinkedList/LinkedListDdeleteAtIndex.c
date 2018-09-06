@@ -14,59 +14,13 @@ struct node * createNode(){
 	return (node);
 }
 
-void insertEnd(int data){
-	struct node * node, * node2;
-	node = createNode();
-	node->data = data;
-	node->next = NULL;
-	if(start == NULL){
-		start = node;
-	}
-	else{
-		node2 = start;
-		while(node2->next != NULL){
-			node2 = node2->next;
-		}
-		node2->next = node;
-	}
-}
-
-void insertBegin(int data){
+void insert(int data){
 		struct node * node;
 		node = createNode();
 		node->data = data;
 		node->next = NULL;
 		node->next = start;
 		start = node;
-}
-
-void deleteAtBegin(){
-	struct node * node;
-	if(start == NULL){
-		printf("List is Empty");
-	}
-	else{
-		node = start;
-		start = start->next;
-		free(node);
-	}
-}
-
-void deleteAtLast(){
-	struct node * node, *node2;
-	node2 = start;
-	if(start == NULL){
-		printf("List is Empty");
-	}
-	else{
-		while(node2->next!=NULL){
-		
-			node = node2;
-			node2 = node2->next;
-	}
-	free(node->next);
-	node->next = NULL;	
-	}
 }
 
 void deleteAtIndex(int index){
@@ -107,19 +61,9 @@ void printList(){
 
 
 void main(){
-	insertEnd(1);
-	insertEnd(2);
-	insertEnd(3);
-	insertEnd(4);
-	
-	insertBegin(5);
-	insertBegin(6);
-	insertBegin(7);
-	
-//	deleteAtBegin();
-
-	//deleteAtLast();
-	
+	insert(5);
+	insert(6);
+	insert(7);
 	deleteAtIndex(3);
 	printList();
 }
