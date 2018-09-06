@@ -58,7 +58,6 @@ int userChoice(){
 }
 
 void main(){
-	int data = 0; 
 	while(1){
 		printf("Enter your choice:\n");
 			switch(userChoice()){
