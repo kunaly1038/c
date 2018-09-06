@@ -14,24 +14,7 @@ struct node * createNode(){
 	return (node);
 }
 
-void insertEnd(int data){
-	struct node * node, * node2;
-	node = createNode();
-	node->data = data;
-	node->next = NULL;
-	if(start == NULL){
-		start = node;
-	}
-	else{
-		node2 = start;
-		while(node2->next != NULL){
-			node2 = node2->next;
-		}
-		node2->next = node;
-	}
-}
-
-void insertBegin(int data){
+void insert(int data){
 		struct node * node;
 		node = createNode();
 		node->data = data;
@@ -67,17 +50,10 @@ void printList(){
 	}
 	printf("NULL  ");
 }
-void main(){
-
-	insertEnd(1);
-	insertEnd(2);
-	insertEnd(3);
-	insertEnd(4);
-	
+void main(){	
 	insertBegin(5);
 	insertBegin(6);
 	insertBegin(7);
-	
 	deleteAtBegin();
 	printList();
 }
