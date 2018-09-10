@@ -21,10 +21,10 @@ struct BST * insert(struct BST * root, int data){
 		root = createNode(data);
 	
 	else if(data <= root->left)
-		root->left = insert(root, data);
+		root->left = insert(root->left, data);
 		
 	else if(data >= root->right)
-		root->right = insert(root, data);
+		root->right = insert(root->right, data);
 		
 	return (root);
 }
